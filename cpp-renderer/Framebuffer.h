@@ -6,7 +6,11 @@
 
 #include "Vector3.h"
 
-class FrameBuffer : public Fl_Gl_Window {
+class FrameBuffer : public Fl_Gl_Window 
+{
+private:
+	void Set(int u, int v, unsigned int color);
+
 public:
 	unsigned int *pix;
 	int w, h;
@@ -15,8 +19,11 @@ public:
 	void KeyboardHandle();
 	int handle(int guievent);
 	void SetBGR(unsigned int bgr);
-	void Set(int u, int v, int color);
-	void SetGuarded(int u, int v, int color);
+	void SetGuarded(int u, int v, unsigned int color);
 	void LoadTiff(char* fname);
 	void SaveAsTiff(char* fname);
+	
+	//draw shapes
+	void DrawRectangle(int u0, int v0, int u1, int v1, unsigned int color);
+	void DrawCircle(int u0, int v0, int radius, unsigned int color);
 };

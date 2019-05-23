@@ -3,15 +3,16 @@
 #include "GUI.h"
 #include "Framebuffer.h"
 
-
-class Scene {
+class Scene
+{
 public:
-	GUI * gui;
-	FrameBuffer *fb;
+	GUI* gui;
+	FrameBuffer* fb;
+
 	Scene();
 	void Debug();
 	void Render();
 
 };
 
-extern Scene *scene;
+extern Scene* scene;

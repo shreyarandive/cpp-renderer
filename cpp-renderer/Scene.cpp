@@ -6,7 +6,7 @@
 #include <fstream>
 #include <iostream>
 
-Scene *scene;
+Scene* scene;
 
 Scene::Scene()
 {
@@ -36,4 +36,23 @@ void Scene::Render()
 void Scene::Debug() 
 {
 	std::cerr << "Debug button pressed" << std::endl;
+
+	fb->DrawRectangle(5, 5, 105, 105, 0xFFFFFFFF);
+	fb->DrawCircle(405, 405, 100, 0xFFFF00FF);
+
+	Vector3 point(3, 1, 2);
+	Vector3 point2(4, 5, 6);
+
+	std::cerr << point[0] << point[1] << point[2] << std::endl;
+	std::cerr << point + point2 << std::endl;
+	std::cerr << point - point2 << std::endl;
+	std::cerr << point * 2 << std::endl;
+	std::cerr << point / 2 << std::endl;
+
+	Vector3 v0(3, 2, 3);
+	Vector3 v1(5, 6, 7);
+	Vector3 v = v0 ^ v1;
+	std::cerr << v << std::endl;
+
+	fb->redraw();
 }
