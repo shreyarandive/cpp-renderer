@@ -54,5 +54,16 @@ void Scene::Debug()
 	Vector3 v = v0 ^ v1;
 	std::cerr << v << std::endl;
 
+	Matrix3 m0, m1;
+	m0[0] = Vector3(10.0f, 12.0f, 20.0f);
+	m0[1] = Vector3(20.0f, 15.0f, 15.0f);
+	m0[2] = Vector3(20.0f, 20.0f, 18.0f);
+	
+	m1[0] = Vector3(10.5f, 10.0f, 10.0f);
+	m1[1] = Vector3(15.0f, 20.0f, 10.0f);
+	m1[2] = Vector3(5.0f, 10.0f, 20.5f);
+
+	std::cerr << m0 * m1 << std::endl;
+
 	fb->redraw();
 }
